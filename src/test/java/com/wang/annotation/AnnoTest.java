@@ -1,0 +1,1 @@
+package com.wang.annotation;import junit.framework.TestCase;/** * Created by Administrator on 2015/9/6. */public class AnnoTest extends TestCase {    public void testAnnoDemo() {        Person person = new Child();        person.age();    }}
