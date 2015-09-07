@@ -14,7 +14,7 @@ public class Apple {
     @FruitColor(fruitColor= FruitColor.Color.RED)
     private String appleColor;
 
-                    =
+
     public String getAppleName() {
         return appleName;
     }

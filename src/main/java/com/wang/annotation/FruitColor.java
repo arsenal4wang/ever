@@ -4,8 +4,11 @@ package com.wang.annotation;
  * Created by Administrator on 2015/9/6.
  */
 
-import java.lang.annotation.*;
-
+import java.lang.annotation.Documented;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 
 /**
  * 水果颜色注解
@@ -21,7 +24,7 @@ public @interface FruitColor {
      * @author peida
      *
      */
-    public enum Color{ BULE,RED,GREEN};
+    public enum Color{BLUE,RED,GREEN};
 
     /**
      * 颜色属性

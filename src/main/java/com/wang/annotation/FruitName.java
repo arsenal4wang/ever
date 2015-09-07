@@ -12,5 +12,4 @@ import java.lang.annotation.*;
 @Inherited
 public @interface FruitName {
    String value();
-
 }
