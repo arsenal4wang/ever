@@ -7,16 +7,16 @@ package com.wang.annotation;
 public class Child implements Person {
 
     @Override
-    public String name() {
-        return "name is james";
+    public String getName() {
+        return "";
     }
 
     @Override
-    public String age() {
+    public String getAge() {
         return "child age 100" ;
     }
     @Override
-    public void sing() {
+    public void Sing() {
         System.out.println("child is singing");
     }
 

@@ -5,11 +5,11 @@ package com.wang.annotation;
  */
 public interface Person {
 
-    public String name();
+    public String getName();
 
-    public String age();
+    public String getAge();
 
    @Deprecated
-    public void sing();
+    public void Sing();
 
 }
