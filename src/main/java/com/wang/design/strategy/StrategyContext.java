@@ -12,11 +12,11 @@ public class StrategyContext {
 
     public double getFinalPrice(double price) {
         if (strategy == null) {
-            System.out.print("no strategy");
             strategy = new GerneralCustomer();
         }
         return strategy.getPrice(price);
     }
+
 
     public void setStrategy(IStrategy strategy) {
         this.strategy = strategy;
