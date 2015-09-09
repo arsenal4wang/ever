@@ -10,24 +10,18 @@ public class StrategyContext {
         return strategy;
     }
 
-    public double getFinalPrice(double price){
-              if (strategy==null){
-                  strategy=new GerneralCustomer();
-
-              }   else  if (strategy.getClass().getName().equals("VIPCustomer")){
-                  System.out.println("VIP strategy" );
-                  strategy=new VIPCustomer();
-
-              }  else  if (strategy.getClass().getName().equals("DiscountCustomer")){
-                  System.out.println("VIP strategy" );
-                  strategy=new VIPCustomer();
-              }
-        return  strategy.getPrice(price);
+    public double getFinalPrice(double price) {
+        if (strategy == null) {
+            System.out.print("no strategy");
+            strategy = new GerneralCustomer();
+        }
+        return strategy.getPrice(price);
     }
 
     public void setStrategy(IStrategy strategy) {
         this.strategy = strategy;
     }
+
     public StrategyContext(IStrategy strategy) {
         this.strategy = strategy;
     }
