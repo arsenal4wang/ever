@@ -1,6 +1,4 @@
-package com.wang.spring.proxy;
-
-import org.omg.CORBA.portable.InvokeHandler;
+package com.wang.design.proxy;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

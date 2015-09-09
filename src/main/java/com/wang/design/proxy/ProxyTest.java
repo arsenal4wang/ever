@@ -1,7 +1,4 @@
-package com.wang.spring.proxy;
-
-import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.Proxy;
+package com.wang.design.proxy;
 
 /**
  * Created by Administrator on 2015/9/8.
