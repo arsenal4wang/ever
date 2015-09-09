@@ -8,6 +8,7 @@ public class LamianNoodel extends AbsNoodle {
         super(style);
     }
 
+
     @Override
     public void eat() {
         System.out.println("這是一碗拉面:"+super.style.style());
