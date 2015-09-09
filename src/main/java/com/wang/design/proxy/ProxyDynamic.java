@@ -34,7 +34,6 @@ public class ProxyDynamic implements InvocationHandler {
         return result;
     }
 
-
     public void before() {
         System.out.println("before---------------");
     }

@@ -10,6 +10,10 @@ public class StrategyContext {
         return strategy;
     }
 
+    /**
+     * @param price
+     * @return
+     */
     public double getFinalPrice(double price) {
         if (strategy == null) {
             strategy = new GerneralCustomer();
