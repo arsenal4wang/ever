@@ -4,6 +4,7 @@ package com.wang.design.bridge;
  * Created by Administrator on 2015/9/9.
  */
 public class LamianNoodel extends AbsNoodle {
+
     public LamianNoodel(IStyle style) {
         super(style);
     }
