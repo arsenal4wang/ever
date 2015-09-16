@@ -15,5 +15,5 @@ public class ProxyTest {
 
         IA ia= (IA) dynamic.createDynamicProxyObjectMethod(new A());
         ia.test();
-    }
-}
+    } }
+

@@ -8,8 +8,8 @@ import java.lang.reflect.Proxy;
  * Created by Administrator on 2015/9/8.
  */
 public class ProxyDynamic implements InvocationHandler {
-    //要代理的原始对象
 
+    //要代理的原始对象
     private Object objOriginal;
 
     public ProxyDynamic() {
