@@ -39,6 +39,7 @@ public abstract class Subject {
             for (Iterator iterator = list.iterator(); iterator.hasNext(); ) {
                 Observer o = (Observer) iterator.next();
                 o.update(this, value);
+
             }
         }
     }
