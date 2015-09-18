@@ -5,9 +5,8 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
-         http://www.springframework.org/schema/context/spring-context.xsd">
-    <context:annotation-config/>
-
+        http://www.springframework.org/schema/context/spring-context.xsd">
+    <context:annotation-config></context:annotation-config>
     <context:component-scan base-package="com.wang.spring"></context:component-scan>
 
     <bean id="user" class="com.wang.spring.basic.User">
@@ -15,7 +14,7 @@
         <property name="pass" value="xijinping"></property>
     </bean>
     <bean id="show" class="com.wang.spring.basic.AutoWiredTest">
-        <!-- <property name="user" ref="user"></property>     -->
+        <property name="user" ref="user"></property>
     </bean>
     <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
 </beans>

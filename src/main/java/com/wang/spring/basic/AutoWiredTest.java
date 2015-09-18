@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
  */
 public class AutoWiredTest {
 
+    private User user;
+
     public User getUser() {
         return user;
     }
@@ -16,16 +18,12 @@ public class AutoWiredTest {
         this.user = user;
     }
 
-     @Autowired
-    private User user;
-
     public AutoWiredTest(){
     }
+
     public static void main(String[] args) {
-        System.out.println();
+        new AutoWiredTest().shows();
     }
-
-
     public void shows() {
         System.out.println(user);
     }
