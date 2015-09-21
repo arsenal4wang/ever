@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  */
 public class AutoWiredTest {
 
+    @Autowired
     private User user;
 
     public User getUser() {

@@ -1,8 +1,11 @@
 package com.wang.spring.basic;
 
+import org.springframework.stereotype.Component;
+
 /**
  * Created by Administrator on 2015/9/7.
  */
+@Component
 public class User {
 
     private String name;

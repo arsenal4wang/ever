@@ -17,4 +17,36 @@
         <property name="user" ref="user"></property>
     </bean>
     <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
+
+
+    <!--activeMQ 配置 -->
+    <!-- 连接池  -->
+    <bean id="pooledConnectionFactory" class="org.apache.activemq.pool.PooledConnectionFactory" destroy-method="stop">
+        <property name="connectionFactory">
+            <bean class="org.apache.activemq.ActiveMQConnectionFactory">
+                <property name="brokerURL" value="tcp://localhost:61616" />
+            </bean>
+        </property>
+    </bean>
+
+    <!-- 连接工厂 -->
+    <bean id="activeMQConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+        <property name="brokerURL" value="tcp://localhost:61616" />
+    </bean>
+
+    <!-- 配置消息目标 -->
+    <bean id="destination" class="org.apache.activemq.command.ActiveMQQueue">
+        <!-- 目标，在ActiveMQ管理员控制台创建 http://localhost:8161/admin/queues.jsp -->
+        <constructor-arg index="0" value="wang.activeMQ.spring" />
+    </bean>
+
+    <!-- 消息模板 -->
+    <bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+        <property name="connectionFactory" ref="activeMQConnectionFactory" />
+        <property name="defaultDestination" ref="destination" />
+        <property name="messageConverter">
+            <bean class="org.springframework.jms.support.converter.SimpleMessageConverter" />
+        </property>
+    </bean>
+
 </beans>

@@ -23,11 +23,12 @@ public class SpringDemo {
 
     public static void main(String[] args) throws FileNotFoundException {
         ApplicationContext ctx = new FileSystemXmlApplicationContext("spring_application.xml");
-        AutoWiredTest show = (AutoWiredTest) ctx.getBean("show");
-//        Show show = new Show();
+        AutoWiredTest show;
+     // show = (AutoWiredTest) ctx.getBean("show");
+        show = new AutoWiredTest();
         show.shows();
-        User user= (User) ctx.getBean("user");
-        System.out.println(user);
+//      User user= (User) ctx.getBean("user");
+//      System.out.println(user);
 
     }
 }
