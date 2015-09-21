@@ -8,7 +8,7 @@ import javax.jms.*;
 /**
  * Created by wangyg.
  */
-public class QueueReceivers {
+public class QueueReceivers{
 
     // tcp 地址
     public static final String BROKER_URL = "tcp://localhost:61616";
@@ -43,6 +43,8 @@ public class QueueReceivers {
                         } catch (JMSException e) {
                             e.printStackTrace();
                         }
+                    } else {
+                        System.out.println("没有消息接接收了");
                     }
                 }
             });

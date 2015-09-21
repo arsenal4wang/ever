@@ -1,9 +1,12 @@
 package com.wang.activeMQ;
 
+import com.sun.xml.internal.ws.client.SenderException;
 import org.apache.activemq.ActiveMQConnection;
 import org.apache.activemq.ActiveMQConnectionFactory;
 
 import javax.jms.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * Created by wangyg.
@@ -23,7 +26,7 @@ public class QueueSenders {
             String message = "发送消息第" + (i + 1) + "条";
             MapMessage map = session.createMapMessage();
             map.setString("text", message);
-            map.setLong("time", System.currentTimeMillis());
+            map.setString("time",  new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
             System.out.println(message);
             sender.send(map);
         }
@@ -44,9 +47,10 @@ public class QueueSenders {
             // 创建一个消息队列
             Queue queue = session.createQueue(DESTINATION);
             // 创建消息发送者
-           QueueSender sender = session.createSender(queue);
+            QueueSender sender = session.createSender(queue);
             // 设置持久化模式
             sender.setDeliveryMode(DeliveryMode.NON_PERSISTENT);
+
             sendMessage(session, sender);
             // 提交会话
             session.commit();
@@ -60,6 +64,7 @@ public class QueueSenders {
             }
             if (connection != null) {
                 connection.close();
+
             }
         }
     }

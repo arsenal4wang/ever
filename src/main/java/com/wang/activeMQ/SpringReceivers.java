@@ -14,10 +14,13 @@ public class SpringReceivers {
         ApplicationContext ctx = new FileSystemXmlApplicationContext("spring_application.xml");
 
         JmsTemplate jmsTemplate = (JmsTemplate) ctx.getBean("jmsTemplate");
-        while(true) {
-            Map<String, Object> map =  (Map<String, Object>) jmsTemplate.receiveAndConvert();
-
-            System.out.println("收到消息：" + map.get("message"));
+        while (true) {
+            Map<String, Object> map = (Map<String, Object>) jmsTemplate.receiveAndConvert();
+            if (map.get("message") != null) {
+                System.out.println("收到消息：" + map.get("message"));
+            } else {
+                System.out.println("接收不到消息");
+            }
         }
     }
 }

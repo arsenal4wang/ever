@@ -31,20 +31,17 @@ public class MessageReceiver {
         //创建一个消息接受者
         MessageConsumer consumer = session.createConsumer(destination);
 
-
         while (true){            //接收数据的等待时间 100ms
             Message  message=consumer.receive(1000*100);
             TextMessage text= (TextMessage) message;
-
             if (text!=null){
                 System.out.println("接收： "+text.getText());
             }else {
-                   break;
+                System.out.println("没有消息接收了");
+                break;
             }
         }
-
         session.commit();
-
         //关闭资源
         if (session != null) {
             session.close();
@@ -53,7 +50,6 @@ public class MessageReceiver {
             connection.close();
         }
     }
-
 
     public static void main(String[] args) throws JMSException {
         MessageReceiver.run();
