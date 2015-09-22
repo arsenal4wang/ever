@@ -10,7 +10,7 @@ import javax.jms.*;
  */
 public class MessageSender {
     // 发送次数
-    public static final int SEND_NUM = 1;
+    public static final int SEND_NUM = 2;
     // tcp 地址
     public static final String BROKER_URL = "tcp://localhost:61616";
     // 目标，在ActiveMQ管理员控制台创建 http://localhost:8161/admin/queues.jsp

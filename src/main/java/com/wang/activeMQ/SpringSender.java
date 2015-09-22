@@ -1,6 +1,7 @@
 package com.wang.activeMQ;
 
 import com.wang.spring.basic.User;
+import org.apache.log4j.PropertyConfigurator;
 import org.apache.xbean.spring.context.FileSystemXmlApplicationContext;
 import org.hibernate.annotations.SourceType;
 import org.springframework.context.ApplicationContext;
@@ -21,6 +22,7 @@ import java.util.Date;
 public class SpringSender {
 
     public static void main(String[] args) {
+       // PropertyConfigurator.configure("log4j.properties");
         ApplicationContext ctx = new FileSystemXmlApplicationContext("spring_application.xml");
         JmsTemplate jmsTemplate = (JmsTemplate) ctx.getBean("jmsTemplate");
         jmsTemplate.send(new MessageCreator() {
@@ -28,7 +30,7 @@ public class SpringSender {
             public Message createMessage(Session session) throws JMSException {
                 MapMessage message = session.createMapMessage();
                 message.setString("message", "current system time is: " + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
-                System.out.println(message);
+                System.out.println("发送消息: "+message.getString("message"));
                 return message;
             }
         });

@@ -23,6 +23,7 @@ public class QueueSenders {
 
     public static void sendMessage(QueueSession session, QueueSender sender) throws Exception {
         for (int i = 0; i < SEND_NUM; i++) {
+
             String message = "发送消息第" + (i + 1) + "条";
             MapMessage map = session.createMapMessage();
             map.setString("text", message);

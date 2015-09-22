@@ -8,7 +8,7 @@ import javax.jms.*;
 /**
  * Created by wangyg.
  */
-public class QueueReceivers{
+public class QueueReceivers {
 
     // tcp 地址
     public static final String BROKER_URL = "tcp://localhost:61616";
@@ -49,8 +49,7 @@ public class QueueReceivers{
                 }
             });
             // 休眠100ms再关闭
-            Thread.sleep(1000 * 100);
-
+            //   Thread.sleep(1000 * 100);
             // 提交会话
             session.commit();
 
@@ -71,4 +70,3 @@ public class QueueReceivers{
         QueueReceivers.run();
     }
 }
-
