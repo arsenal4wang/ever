@@ -5,6 +5,7 @@ import java.util.Iterator;
 
 /**
  * Created by Administrator on 2015/9/9.
+ * 类似于发布订阅模式
  */
 public abstract class Subject {
     ArrayList<Observer> list = new ArrayList<Observer>();
